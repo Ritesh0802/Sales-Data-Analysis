@@ -10,6 +10,12 @@ st.title("Zepto Data Dashboard")
 conn = get_connection()
 df = pd.read_sql("SELECT * FROM zepto;", conn)
 
+df.rename(columns={
+    "discountpercent": "discount_percent",
+    "discountedsellingprice": "discounted_selling_price",
+    "weightingms": "weight_g"
+}, inplace=True)
+
 # Raw data expander
 with st.expander("View Raw Data"):
     st.dataframe(df)
@@ -129,4 +135,5 @@ st.caption(
     "This shows average discount patterns in the dataset. "
     "Helps understand competitive pricing trends."
 )
+
 
