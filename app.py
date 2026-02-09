@@ -54,7 +54,7 @@ st.markdown(
 )
 
 # -------- STOCK INSIGHT --------
-stock_pct = (filtered_df["available_quantity"] > 0).mean() * 100
+stock_pct = (filtered_df["availablequantity"] > 0).mean() * 100
 st.markdown(
     f"**Stock Insight:** About {stock_pct:.1f}% of items in "
     f"**{category}** are currently in stock."
@@ -135,5 +135,6 @@ st.caption(
     "This shows average discount patterns in the dataset. "
     "Helps understand competitive pricing trends."
 )
+
 
 
