@@ -103,7 +103,7 @@ st.markdown(
 # -------- STOCK AVAILABILITY --------
 st.subheader("Stock Availability Overview")
 
-stock_status = df["available_quantity"].apply(
+stock_status = df["availablequantity"].apply(
     lambda x: "In Stock" if x > 0 else "Out of Stock"
 ).value_counts()
 
@@ -135,6 +135,7 @@ st.caption(
     "This shows average discount patterns in the dataset. "
     "Helps understand competitive pricing trends."
 )
+
 
 
 
